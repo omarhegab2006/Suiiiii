@@ -25,16 +25,16 @@ void loop() {
   if(timer-PreviousTime>=interval){
     lcd.setCursor(0, 0);
     lcd.print("Temp:");
-    lcd.print(t-9.0);
+    lcd.print(t);
     lcd.print(" C");
     lcd.setCursor(0, 1);
     lcd.print("Humid:");
-    lcd.print(h-14);
+    lcd.print(h);
     lcd.print(" %");
     PreviousTime=timer;
   }
-    if(t-9.0>20) digitalWrite(7, LOW);
+    if(t>20) digitalWrite(7, LOW);
     else digitalWrite(7, HIGH);
-    if(t-9.0<17) digitalWrite(6, LOW);
+    if(t<16) digitalWrite(6, LOW);
     else digitalWrite(6, HIGH);
  }
